@@ -54,9 +54,9 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     height="48px"
                     width="240px"
                     variant="ghost"
-                    color="#DCE2FF"
-                    _hover={{ border: '2px solid #1C6FEB' }}
-                    leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                    color="white"
+                    _hover={{ border: '2px solid white' }}
+                    leftIcon={<MdPhone color="#9e30c0ef" size="20px" />}
                     onClick={() => onClickButtonHandler({ text: phone })}
                   >
                     {phone}
@@ -66,9 +66,9 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     height="48px"
                     width="240px"
                     variant="ghost"
-                    color="#DCE2FF"
-                    _hover={{ border: '2px solid #1C6FEB' }}
-                    leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                    color="white"
+                    _hover={{ border: '2px solid white' }}
+                    leftIcon={<MdEmail color="#9e30c0ef" size="20px" />}
                     onClick={() => onClickButtonHandler({ text: email })}
                   >
                     {email}
@@ -78,9 +78,9 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     height="48px"
                     width="240px"
                     variant="ghost"
-                    color="#DCE2FF"
-                    _hover={{ border: '2px solid #1C6FEB' }}
-                    leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                    color="white"
+                    _hover={{ border: '2px solid white' }}
+                    leftIcon={<MdLocationOn color="#9e30c0ef" size="20px" />}
                   >
                     {location}
                   </Button>
@@ -98,7 +98,7 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     variant="ghost"
                     size="lg"
                     isRound
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: '#9e30c0ef' }}
                     icon={<BsBuildingsFill size="28px" />}
                   />
                 </Link>
@@ -108,7 +108,7 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     variant="ghost"
                     size="lg"
                     isRound
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: '#9e30c0ef' }}
                     icon={<RiKakaoTalkFill size="28px" />}
                   />
                 </Link>
@@ -118,7 +118,7 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     variant="ghost"
                     size="lg"
                     isRound
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: '#9e30c0ef' }}
                     icon={<RiMailFill size="28px" />}
                   />
                 </Link>

@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/no-duplicate-string */
+
 import {
   Container,
   SimpleGrid,
@@ -11,11 +13,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import type { ReactElement } from 'react';
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from 'react-icons/io5';
+import { IoSearchSharp } from 'react-icons/io5';
 
 interface FeatureProps {
   text: string;
@@ -50,10 +48,10 @@ const About = () => {
         <Stack spacing={4}>
           <Text
             textTransform="uppercase"
-            color="blue.400"
+            color="purple.400"
             fontWeight={600}
             fontSize="sm"
-            bg={useColorModeValue('blue.50', 'blue.900')}
+            bg={useColorModeValue('purple.100', 'purple.900')}
             p={2}
             alignSelf="flex-start"
             rounded="md"
@@ -73,15 +71,13 @@ const About = () => {
             }
           >
             <Feature
-              icon={
-                <Icon as={IoAnalyticsSharp} color="yellow.500" w={5} h={5} />
-              }
-              iconBg={useColorModeValue('yellow.100', 'yellow.900')}
+              icon={<Icon as={IoSearchSharp} color="purple.500" w={5} h={5} />}
+              iconBg={useColorModeValue('purple.100', 'purple.900')}
               text="시장조사를 통한 공간 설립"
             />
             <Feature
-              icon={<Icon as={IoLogoBitcoin} color="green.500" w={5} h={5} />}
-              iconBg={useColorModeValue('green.100', 'green.900')}
+              icon={<Icon as={IoSearchSharp} color="purple.500" w={5} h={5} />}
+              iconBg={useColorModeValue('purple.100', 'purple.900')}
               text="운영 방안 구축"
             />
             <Feature
@@ -91,12 +87,12 @@ const About = () => {
             />
             <Feature
               icon={<Icon as={IoSearchSharp} color="purple.500" w={5} h={5} />}
-              iconBg={useColorModeValue('red.100', 'red.900')}
-              text="공간 내 모든 소모품 및 자산 소싱 지원 (국내 / 해외)"
+              iconBg={useColorModeValue('purple.100', 'purple.900')}
+              text="공간 내 모든 소모품 및 자산 지원"
             />
             <Feature
               icon={<Icon as={IoSearchSharp} color="purple.500" w={5} h={5} />}
-              iconBg={useColorModeValue('blue.100', 'blue.900')}
+              iconBg={useColorModeValue('purple.100', 'purple.900')}
               text="인허가 및 운영시스템 구축 지원"
             />
           </Stack>

@@ -11,6 +11,7 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 
 export const Blob = (props: IconProps) => {
   return (
@@ -56,14 +57,14 @@ const ConsultingText = () => {
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: 'red.400',
+                bg: 'purple.400',
                 zIndex: -1,
               }}
             >
               OS Consulting,
             </Text>
             <br />
-            <Text as="span" color="red.400">
+            <Text as="span" color="purple.400">
               OneStop consulting
             </Text>
           </Heading>
@@ -77,17 +78,19 @@ const ConsultingText = () => {
             체류하며 공간을 경험하게 됩니다.
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} alignItems="center">
-            <Button
-              rounded="full"
-              size="lg"
-              fontWeight="normal"
-              px={6}
-              colorScheme="red"
-              bg="red.400"
-              _hover={{ bg: 'red.500' }}
-            >
-              Contact Us
-            </Button>
+            <Link href="/contact">
+              <Button
+                rounded="full"
+                size="lg"
+                fontWeight="normal"
+                px={6}
+                colorScheme="red"
+                bg="purple.400"
+                _hover={{ bg: 'purple.500' }}
+              >
+                Contact Us
+              </Button>
+            </Link>
           </Stack>
         </Stack>
         <Flex
