@@ -33,10 +33,11 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'About L&K',
+    href: '/about',
   },
   {
     label: 'OS Consulting',
-    href: '#',
+    href: '/About',
   },
   {
     label: 'Portfolio & Partners',
