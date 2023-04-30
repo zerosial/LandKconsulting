@@ -10,8 +10,10 @@ import {
   Box,
   Text,
 } from '@chakra-ui/react';
-import { BsGithub, BsDiscord } from 'react-icons/bs';
-import { MdPhone, MdEmail, MdLocationOn, MdFacebook } from 'react-icons/md';
+import Link from 'next/link';
+import { BsBuildingsFill } from 'react-icons/bs';
+import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
+import { RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
 
 interface ContactProps {
   name: string;
@@ -20,7 +22,15 @@ interface ContactProps {
   location: string;
 }
 
+interface ClickButtonProps {
+  text: string;
+}
+
 const ContactBox = ({ name, phone, email, location }: ContactProps) => {
+  const onClickButtonHandler = ({ text }: ClickButtonProps) => {
+    navigator.clipboard.writeText(text);
+  };
+
   return (
     <Box
       bg="purple.700"
@@ -47,6 +57,7 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     color="#DCE2FF"
                     _hover={{ border: '2px solid #1C6FEB' }}
                     leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                    onClick={() => onClickButtonHandler({ text: phone })}
                   >
                     {phone}
                   </Button>
@@ -58,6 +69,7 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     color="#DCE2FF"
                     _hover={{ border: '2px solid #1C6FEB' }}
                     leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                    onClick={() => onClickButtonHandler({ text: email })}
                   >
                     {email}
                   </Button>
@@ -80,30 +92,36 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                 px={5}
                 alignItems="flex-start"
               >
-                <IconButton
-                  aria-label="facebook"
-                  variant="ghost"
-                  size="lg"
-                  isRound
-                  _hover={{ bg: '#0D74FF' }}
-                  icon={<MdFacebook size="28px" />}
-                />
-                <IconButton
-                  aria-label="github"
-                  variant="ghost"
-                  size="lg"
-                  isRound
-                  _hover={{ bg: '#0D74FF' }}
-                  icon={<BsGithub size="28px" />}
-                />
-                <IconButton
-                  aria-label="discord"
-                  variant="ghost"
-                  size="lg"
-                  isRound
-                  _hover={{ bg: '#0D74FF' }}
-                  icon={<BsDiscord size="28px" />}
-                />
+                <Link href="http://naver.com">
+                  <IconButton
+                    aria-label="github"
+                    variant="ghost"
+                    size="lg"
+                    isRound
+                    _hover={{ bg: '#0D74FF' }}
+                    icon={<BsBuildingsFill size="28px" />}
+                  />
+                </Link>
+                <Link href="http://naver.com">
+                  <IconButton
+                    aria-label="github"
+                    variant="ghost"
+                    size="lg"
+                    isRound
+                    _hover={{ bg: '#0D74FF' }}
+                    icon={<RiKakaoTalkFill size="28px" />}
+                  />
+                </Link>
+                <Link href={`mailto:${email}`}>
+                  <IconButton
+                    aria-label="email"
+                    variant="ghost"
+                    size="lg"
+                    isRound
+                    _hover={{ bg: '#0D74FF' }}
+                    icon={<RiMailFill size="28px" />}
+                  />
+                </Link>
               </HStack>
             </Box>
           </WrapItem>
