@@ -20,6 +20,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 import ThemeToggle from './ThemeToggle';
 
@@ -63,6 +64,7 @@ const NAV_ITEMS: Array<NavItem> = [
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Link
+      as={NextLink}
       href={href}
       role="group"
       display="block"
@@ -109,6 +111,7 @@ const DesktopNav = () => {
           <Popover trigger="hover" placement="bottom-start">
             <PopoverTrigger>
               <Link
+                as={NextLink}
                 p={2}
                 href={navItem.href ?? '#'}
                 fontSize="sm"
