@@ -37,7 +37,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'OS Consulting',
-    href: '/About',
+    href: '/consulting',
   },
   {
     label: 'Portfolio & Partners',
