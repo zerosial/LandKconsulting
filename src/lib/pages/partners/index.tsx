@@ -38,8 +38,31 @@ const Partners = () => {
             fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
           >
             이 과정에서 선별된 된 파트너사와는 현재까지도 업무를 교류하면 함께
-            파트너 관계를 유지하고 있습니다. 인테리어 설계 (Interior) 브랜딩
-            설계 (Branding) 국내/외 소싱 및 구매 (Sourcing & Purchasing)
+            파트너 관계를 유지하고 있습니다.
+          </Text>
+          <Text
+            color="white"
+            fontWeight={700}
+            lineHeight={1.2}
+            fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
+          >
+            인테리어 설계 (Interior)
+          </Text>
+          <Text
+            color="white"
+            fontWeight={700}
+            lineHeight={1.2}
+            fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
+          >
+            브랜딩 설계 (Branding)
+          </Text>
+          <Text
+            color="white"
+            fontWeight={700}
+            lineHeight={1.2}
+            fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
+          >
+            국내/외 소싱 및 구매 (Sourcing & Purchasing)
           </Text>
         </Stack>
       </VStack>
