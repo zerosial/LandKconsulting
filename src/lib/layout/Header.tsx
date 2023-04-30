@@ -113,7 +113,7 @@ const DesktopNav = () => {
               <Link
                 as={NextLink}
                 p={2}
-                href={navItem.href ?? '#'}
+                href={navItem.href ?? ''}
                 fontSize="sm"
                 fontWeight={500}
                 color={linkColor}
@@ -157,7 +157,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
       <Flex
         py={2}
         as={NextLink}
-        href={href ?? '#'}
+        href={href ?? ''}
         justify="space-between"
         align="center"
         _hover={{
