@@ -45,12 +45,12 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Portfolio',
         subLabel: 'L&K의 포트폴리오',
-        href: '#',
+        href: '/portfolio',
       },
       {
         label: 'Partners',
         subLabel: '같이하는 우리의 파트너들',
-        href: '#',
+        href: '/partners',
       },
     ],
   },
