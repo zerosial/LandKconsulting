@@ -33,7 +33,12 @@ export default function CaptionCarousel() {
   const side = useBreakpointValue({ base: '30%', md: '40px' });
 
   return (
-    <Box position="relative" height="600px" width="full" overflow="hidden">
+    <Box
+      position="relative"
+      height={{ base: '500px', md: '600px' }}
+      width="full"
+      overflow="hidden"
+    >
       <link
         rel="stylesheet"
         type="text/css"
