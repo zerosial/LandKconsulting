@@ -79,7 +79,7 @@ export default function CaptionCarousel() {
             key={index}
             height="6xl"
             position="relative"
-            backgroundPosition="center"
+            backgroundPosition="center bottom"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
