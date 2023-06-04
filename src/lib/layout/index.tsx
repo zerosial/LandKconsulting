@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Stack } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
 
 import Footer from './Footer';
@@ -14,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Box>
         <Header />
         <Box as="main">{children}</Box>
+        <Stack h="32" />
         <Footer />
       </Box>
     </Box>
