@@ -84,7 +84,6 @@ const ConsultingText = () => {
                 size="lg"
                 fontWeight="normal"
                 px={6}
-                colorScheme="red"
                 bg="purple.400"
                 _hover={{ bg: 'purple.500' }}
               >
@@ -99,6 +98,7 @@ const ConsultingText = () => {
           align="center"
           position="relative"
           w="full"
+          pb="4"
         >
           <Blob
             w="150%"
@@ -107,7 +107,7 @@ const ConsultingText = () => {
             top="-20%"
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
+            color={useColorModeValue('red.100', 'red.400')}
           />
           <Box
             position="relative"
@@ -123,7 +123,7 @@ const ConsultingText = () => {
               align="center"
               w="100%"
               h="100%"
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
+              src="/picture/Cooperation.jpg"
             />
           </Box>
         </Flex>

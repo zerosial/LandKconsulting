@@ -11,7 +11,6 @@ const Home = () => {
       justifyContent="center"
       minHeight="70vh"
       gap={4}
-      mb={8}
       w="full"
     >
       <NextSeo title="Home" />
