@@ -5,6 +5,7 @@ import {
   VStack,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 
 const Partners = () => {
   return (
@@ -15,6 +16,7 @@ const Partners = () => {
       backgroundSize="cover"
       backgroundPosition="center center"
     >
+      <NextSeo title="partners" />
       <VStack
         w="full"
         justify="center"
