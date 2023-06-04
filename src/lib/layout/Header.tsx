@@ -17,8 +17,8 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
+  Image,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
@@ -114,7 +114,7 @@ const DesktopNav = () => {
                 as={NextLink}
                 p={2}
                 href={navItem.href ?? ''}
-                fontSize="sm"
+                fontSize="md"
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -246,16 +246,24 @@ const Header = () => {
             aria-label="Toggle Navigation"
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily="heading"
-            color={useColorModeValue('gray.800', 'white')}
-          >
-            L&K(이미지)
-          </Text>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: 'center', md: 'start' }}
+          align="center"
+        >
+          <Link as={NextLink} href="/">
+            <Image
+              src={useColorModeValue(
+                '/picture/logo_black.png',
+                '/picture/logo.png'
+              )}
+              width="20"
+              height="12"
+              alt="로고"
+            />
+          </Link>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={12}>
             <DesktopNav />
           </Flex>
         </Flex>
