@@ -12,6 +12,7 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import type { ReactElement } from 'react';
 import { IoSearchSharp } from 'react-icons/io5';
 
@@ -44,6 +45,7 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
 const About = () => {
   return (
     <Container maxW="5xl" py={12}>
+      <NextSeo title="About" />
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text

@@ -8,6 +8,7 @@ import {
   StatNumber,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import type { ReactNode } from 'react';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { GrVolumeControl } from 'react-icons/gr';
@@ -55,6 +56,7 @@ function StatsCard(props: StatsCardProps) {
 const Consulting = () => {
   return (
     <Box maxW="7xl" mx="auto" pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+      <NextSeo title="Consulting" />
       <chakra.h1 textAlign="center" fontSize="4xl" py={10} fontWeight="bold">
         핵심가치
       </chakra.h1>
