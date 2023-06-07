@@ -13,8 +13,6 @@ import React from 'react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import Slider from 'react-slick';
 
-import { CAROUSEL_IMAGES } from '../Constants';
-
 const settings = {
   dots: true,
   arrows: false,
@@ -26,8 +24,16 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
 };
+interface ImagesProps {
+  images: Image[];
+}
+interface Image {
+  title: string;
+  text: string;
+  image: string;
+}
 
-export default function CaptionCarousel() {
+export default function CaptionCarousel({ images }: ImagesProps) {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '40px' });
@@ -74,7 +80,7 @@ export default function CaptionCarousel() {
         <BiRightArrowAlt size="40px" />
       </IconButton>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {CAROUSEL_IMAGES.map((card, index) => (
+        {images.map((card, index) => (
           <Box
             key={index}
             height="6xl"

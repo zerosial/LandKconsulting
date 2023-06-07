@@ -2,6 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
 import CaptionCarousel from '~/lib/components/carousel/carousel';
+import { HOME_CAROUSEL_IMAGES } from '~/lib/components/Constants';
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
       w="full"
     >
       <NextSeo title="Home" />
-      <CaptionCarousel />
+      <CaptionCarousel images={HOME_CAROUSEL_IMAGES} />
     </Flex>
   );
 };

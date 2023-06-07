@@ -1,4 +1,4 @@
-export const CAROUSEL_IMAGES = [
+export const HOME_CAROUSEL_IMAGES = [
   {
     title: '샘플 1번',
     text: '샘플 1번',
