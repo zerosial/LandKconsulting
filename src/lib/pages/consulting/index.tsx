@@ -1,12 +1,21 @@
+import { CheckIcon } from '@chakra-ui/icons';
 import {
   Box,
   chakra,
+  Container,
   Flex,
+  Heading,
+  HStack,
+  Icon,
   SimpleGrid,
+  Stack,
   Stat,
   StatLabel,
   StatNumber,
   useColorModeValue,
+  VStack,
+  Text,
+  SlideFade,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import type { ReactNode } from 'react';
@@ -21,6 +30,30 @@ interface StatsCardProps {
   stat: string;
   icon: ReactNode;
 }
+
+const features = [
+  {
+    id: 1,
+    title: '시장조사를 통한 타겟 수립',
+  },
+  {
+    id: 2,
+    title: '운영 동선 및 방안 구축',
+  },
+  {
+    id: 3,
+    title: '건축 / 인테리어 / 브랜딩 설계 지원',
+  },
+  {
+    id: 4,
+    title: '공간 내 모든 소모품 및 자산 소싱 지원',
+  },
+  {
+    id: 5,
+    title: '인허가 및 운영시스템 구축 지원',
+  },
+];
+
 function StatsCard(props: StatsCardProps) {
   const { title, stat, icon } = props;
   return (
@@ -60,24 +93,47 @@ const Consulting = () => {
       <chakra.h1 textAlign="center" fontSize="4xl" py={10} fontWeight="bold">
         핵심가치
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-        <StatsCard
-          title="Space Value Maximization"
-          stat="공간 가치 극대화"
-          icon={<VscSymbolNamespace size="3em" />}
-        />
-        <StatsCard
-          title="Cost Reduction"
-          stat="원가 절감 극대화"
-          icon={<GiReceiveMoney size="3em" />}
-        />
-        <StatsCard
-          title="Operation Maxi migration"
-          stat="운영 효율 극대화"
-          icon={<GrVolumeControl size="3em" />}
-        />
-      </SimpleGrid>
-      <ConsultingText />
+      <SlideFade in delay={0.5}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+          <StatsCard
+            title="Space Value Maximization"
+            stat="공간 가치 극대화"
+            icon={<VscSymbolNamespace size="3em" />}
+          />
+          <StatsCard
+            title="Cost Reduction"
+            stat="원가 절감 극대화"
+            icon={<GiReceiveMoney size="3em" />}
+          />
+          <StatsCard
+            title="Operation Maxi migration"
+            stat="운영 효율 극대화"
+            icon={<GrVolumeControl size="3em" />}
+          />
+        </SimpleGrid>
+        <Box pt={20}>
+          <Stack spacing={4} as={Container} maxW="3xl" textAlign="center">
+            <Heading fontSize="3xl">L&K의 OS Consulting</Heading>
+          </Stack>
+          <Container maxW="6xl" mt={10}>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
+              {features.map((feature) => (
+                <HStack key={feature.id} align="top">
+                  <Box color="green.400" px={2}>
+                    <Icon as={CheckIcon} />
+                  </Box>
+                  <VStack align="start">
+                    <Text fontWeight={600}>{feature.title}</Text>
+                  </VStack>
+                </HStack>
+              ))}
+            </SimpleGrid>
+          </Container>
+        </Box>
+      </SlideFade>
+      <SlideFade in delay={1}>
+        <ConsultingText />
+      </SlideFade>
     </Box>
   );
 };

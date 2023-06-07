@@ -77,7 +77,7 @@ function TestimonialCard(props: TestimonialCardProps) {
   const { name, role, content, pictures } = props;
   return (
     <Flex
-      boxShadow="lg"
+      boxShadow="xl"
       maxW="760px"
       direction={{ base: 'column-reverse', md: 'row' }}
       width="90vw"
