@@ -6,7 +6,6 @@ import {
   useBreakpointValue,
   Stack,
   Heading,
-  Text,
   Container,
 } from '@chakra-ui/react';
 import React from 'react';
@@ -26,25 +25,20 @@ const settings = {
 };
 interface ImagesProps {
   images: Image[];
+  height: string;
 }
 interface Image {
   title: string;
-  text: string;
   image: string;
 }
 
-export default function CaptionCarousel({ images }: ImagesProps) {
+export default function CaptionCarousel({ images, height }: ImagesProps) {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '40px' });
+  const side = useBreakpointValue({ base: '10%', md: '40px' });
 
   return (
-    <Box
-      position="relative"
-      height={{ base: '500px', md: '600px' }}
-      width="full"
-      overflow="hidden"
-    >
+    <>
       <link
         rel="stylesheet"
         type="text/css"
@@ -65,7 +59,7 @@ export default function CaptionCarousel({ images }: ImagesProps) {
         zIndex={2}
         onClick={() => slider?.slickPrev()}
       >
-        <BiLeftArrowAlt size="40px" />
+        <BiLeftArrowAlt size="40px" color="white" />
       </IconButton>
       <IconButton
         aria-label="right-arrow"
@@ -77,39 +71,46 @@ export default function CaptionCarousel({ images }: ImagesProps) {
         zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-        <BiRightArrowAlt size="40px" />
+        <BiRightArrowAlt size="40px" color="white" />
       </IconButton>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {images.map((card, index) => (
           <Box
             key={index}
-            height="6xl"
-            position="relative"
-            backgroundPosition="center bottom"
+            backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
           >
-            <Container size="container.lg" height="600px" position="relative">
+            <Container size="container.lg" height={height}>
               <Stack
                 spacing={6}
-                w="full"
+                w="100vw"
                 maxW="lg"
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)"
               >
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                  {card.title}
-                </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
-                  {card.text}
-                </Text>
+                <Box
+                  backdropFilter="auto"
+                  backdropBrightness="60%"
+                  mt="30vh"
+                  maxW="90vw"
+                >
+                  <Heading
+                    fontFamily="body"
+                    textAlign="center"
+                    fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
+                    color="white"
+                  >
+                    {card.title}
+                  </Heading>
+                </Box>
               </Stack>
             </Container>
           </Box>
         ))}
       </Slider>
-    </Box>
+    </>
   );
 }

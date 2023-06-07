@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
 import CaptionCarousel from '~/lib/components/carousel/carousel';
@@ -15,7 +15,14 @@ const Home = () => {
       w="full"
     >
       <NextSeo title="Home" />
-      <CaptionCarousel images={HOME_CAROUSEL_IMAGES} />
+      <Box
+        position="relative"
+        height={{ base: '500px', md: '600px' }}
+        width="full"
+        overflow="hidden"
+      >
+        <CaptionCarousel images={HOME_CAROUSEL_IMAGES} height="600px" />
+      </Box>
     </Flex>
   );
 };

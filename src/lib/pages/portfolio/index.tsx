@@ -5,9 +5,10 @@ import {
   SimpleGrid,
   useColorModeValue,
   Text,
-  Image,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
+
+import CaptionCarousel from '~/lib/components/carousel/carousel';
 
 const testimonials = [
   {
@@ -15,14 +16,48 @@ const testimonials = [
     role: '2017/06 준공 - 2019/12 개관',
     content:
       'L&K Operation의 임직원은 첫번째 자사 호텔 건립을 시작하였습니다. 시장조사, 타겟수립, 건축/인테리어 설계, 브랜딩, FF&E 소싱, 영업, 인허가, 오픈까지 모든 작업을 총괄로 진행하였습니다. 수 많은 시행착오를 겪었지만 이는 곧 팀을 성장하게 만들었습니다.',
-    picture: 'picture/cielo1.jpg',
+    pictures: [
+      {
+        title: '',
+        image: 'picture/orchid_lobie.jpg',
+      },
+      {
+        title: '',
+        image: 'picture/orchid_lobie2.jpg',
+      },
+      {
+        title: '',
+        image: 'picture/orchid_rooftop.jpg',
+      },
+      {
+        title: '',
+        image: 'picture/orchid_banquet.jpg',
+      },
+    ],
   },
   {
     name: '“호텔 시엘로”',
     role: '2021/10 준공 - 2022/08 개관',
     content:
-      '클라이언트와 3달간의 미팅과 소통을 통해 “갑”과 “을”의 관계가 아닌 파트너사로써 선정이 되었습니다. 오키드 호텔에서의 경험을 통해 장/단점을 서로 공유 하고 이를 개선하고자 2021년 10월부터 소통을 시작하여 2022년 01월 건축물 골조가 완료된 상태에서 합류, 인테리어 설계, 브랜딩 설계, 소싱, 운영시스템 구축을 컨설팅 하였습니다',
-    picture: 'picture/cielo1.jpg',
+      '클라이언트와 3달간의 미팅과 소통을 통해 파트너사로써 선정이 되었습니다. 오키드 호텔에서의 경험을 통해 장/단점을 서로 공유 하고 이를 개선하고자 2021년 10월부터 소통을 시작하여 2022년 01월 건축물 골조가 완료된 상태에서 합류, 인테리어 설계, 브랜딩 설계, 소싱, 운영시스템 구축을 컨설팅 하였습니다',
+    pictures: [
+      {
+        title: '',
+        image: 'picture/cielo1.jpg',
+      },
+      {
+        title: '',
+        image: 'picture/cielo2.jpg',
+      },
+      {
+        title: '',
+        image: 'picture/cielo_lobie.jpg',
+      },
+      {
+        title: '',
+        image: 'picture/cielo_rooftop.jpg',
+      },
+    ],
   },
 ];
 
@@ -30,46 +65,70 @@ interface TestimonialCardProps {
   name: string;
   role: string;
   content: string;
-  picture: string;
+  pictures: Image[];
   index: number;
+}
+interface Image {
+  title: string;
+  image: string;
 }
 
 function TestimonialCard(props: TestimonialCardProps) {
-  const { name, role, content, picture } = props;
+  const { name, role, content, pictures } = props;
   return (
     <Flex
       boxShadow="lg"
       maxW="760px"
       direction={{ base: 'column-reverse', md: 'row' }}
-      width="95vw"
+      width="90vw"
       rounded="xl"
       p={6}
-      m={2}
+      m={4}
+      gap={4}
       justifyContent="space-between"
       position="relative"
       bg={useColorModeValue('purple.100', 'purple.700')}
     >
-      <Flex direction="column" textAlign="left" justifyContent="space-between">
-        <Text fontFamily="Inter" fontWeight="medium" fontSize="15px" pb={4}>
+      <Flex
+        w="80vw"
+        direction="column"
+        textAlign="left"
+        justifyContent="space-between"
+      >
+        <Text
+          fontFamily="Inter"
+          fontWeight="medium"
+          fontSize={{ base: '14px', md: '18px' }}
+          pb={4}
+        >
           {content}
         </Text>
-        <Text fontFamily="Work Sans" fontWeight="bold" fontSize={14}>
+        <Text
+          fontFamily="Work Sans"
+          fontWeight="bold"
+          fontSize={{ base: '16px', md: '20px' }}
+        >
           {name}
-          <Text fontFamily="Inter" fontWeight="medium" color="gray.500">
+          <Text
+            fontFamily="Inter"
+            fontWeight="medium"
+            color="gray.500"
+            fontSize={16}
+          >
             {' '}
             - {role}
           </Text>
         </Text>
       </Flex>
-      <Image
-        src={picture}
-        width="400px"
-        height="300px"
+      <Box
+        position="relative"
+        width="80vw"
         rounded="2xl"
-        objectFit="cover"
         alignSelf="center"
-        m={{ base: '0 0 35px 0', md: '0 0 0 50px' }}
-      />
+        overflow="hidden"
+      >
+        <CaptionCarousel images={pictures} height="300px" />
+      </Box>
     </Flex>
   );
 }
@@ -89,7 +148,7 @@ const Portfolio = () => {
         <chakra.h3
           fontFamily="Work Sans"
           fontWeight="bold"
-          fontSize={20}
+          fontSize={24}
           textTransform="uppercase"
           color="purple.400"
         >
@@ -101,7 +160,7 @@ const Portfolio = () => {
           fontFamily="Work Sans"
           color={useColorModeValue('gray.700', 'gray.50')}
         >
-          저희들과 함께하는 호텔
+          함께하는 호텔
         </chakra.h1>
         <chakra.h2
           margin="auto"
