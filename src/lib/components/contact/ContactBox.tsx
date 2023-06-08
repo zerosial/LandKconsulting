@@ -5,13 +5,12 @@ import {
   Heading,
   VStack,
   Button,
-  HStack,
   IconButton,
   Box,
   Text,
+  Flex,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import { BsBuildingsFill } from 'react-icons/bs';
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
 import { RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
 
@@ -20,13 +19,20 @@ interface ContactProps {
   phone: string;
   email: string;
   location: string;
+  kakaolink: string;
 }
 
 interface ClickButtonProps {
   text: string;
 }
 
-const ContactBox = ({ name, phone, email, location }: ContactProps) => {
+const ContactBox = ({
+  name,
+  phone,
+  email,
+  location,
+  kakaolink,
+}: ContactProps) => {
   const onClickButtonHandler = ({ text }: ClickButtonProps) => {
     navigator.clipboard.writeText(text);
   };
@@ -86,23 +92,14 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                   </Button>
                 </VStack>
               </Box>
-              <HStack
+              <Flex
                 mt={{ lg: 10, md: 10 }}
-                spacing={5}
+                gap={5}
                 px={5}
-                alignItems="flex-start"
+                justifyContent="center"
+                align="center"
               >
-                <Link href="http://naver.com">
-                  <IconButton
-                    aria-label="github"
-                    variant="ghost"
-                    size="lg"
-                    isRound
-                    _hover={{ bg: '#9e30c0ef' }}
-                    icon={<BsBuildingsFill size="28px" />}
-                  />
-                </Link>
-                <Link href="http://naver.com">
+                <Link href={kakaolink}>
                   <IconButton
                     aria-label="github"
                     variant="ghost"
@@ -122,7 +119,7 @@ const ContactBox = ({ name, phone, email, location }: ContactProps) => {
                     icon={<RiMailFill size="28px" />}
                   />
                 </Link>
-              </HStack>
+              </Flex>
             </Box>
           </WrapItem>
         </Wrap>

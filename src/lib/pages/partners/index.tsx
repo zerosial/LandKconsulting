@@ -1,135 +1,105 @@
 import {
   Box,
-  chakra,
+  Container,
   Flex,
-  SimpleGrid,
-  useColorModeValue,
-  Text,
+  Heading,
   Image,
+  SlideFade,
+  Stack,
+  Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
-const testimonials = [
-  {
-    name: 'Brandon P.',
-    role: 'Chief Marketing Officer',
-    content:
-      'It really saves me time and effort. It is exactly what our business has been lacking. EEZY is the most valuable business resource we have EVER purchased. After using EEZY my business skyrocketed!',
-    picture: 'picture/cielo1.jpg',
-  },
-  {
-    name: 'Brandon P2.',
-    role: 'Chief Marketing Officer',
-    content:
-      'It really saves me time and effort. It is exactly what our business has been lacking. EEZY is the most valuable business resource we have EVER purchased. After using EEZY my business skyrocketed!',
-    picture: 'picture/cielo1.jpg',
-  },
-];
-
-interface TestimonialCardProps {
-  name: string;
-  role: string;
-  content: string;
-  picture: string;
-  index: number;
+interface CardProps {
+  heading: string;
+  description: string;
+  image: string;
 }
 
-function TestimonialCard(props: TestimonialCardProps) {
-  const { name, role, content, picture } = props;
+const Card = ({ heading, description, image }: CardProps) => {
   return (
-    <Flex
-      boxShadow="lg"
-      maxW="760px"
-      direction={{ base: 'column-reverse', md: 'row' }}
-      width="85vw"
-      rounded="xl"
-      p={10}
-      m={6}
-      justifyContent="space-between"
-      position="relative"
-      bg={useColorModeValue('purple.100', 'purple.700')}
+    <Box
+      maxW={{ base: 'full', md: '275px' }}
+      w="full"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      p={5}
     >
-      <Flex direction="column" textAlign="left" justifyContent="space-between">
-        <Text fontFamily="Inter" fontWeight="medium" fontSize="15px" pb={4}>
-          {content}
-        </Text>
-        <Text fontFamily="Work Sans" fontWeight="bold" fontSize={14}>
-          {name}
-          <Text fontFamily="Inter" fontWeight="medium" color="gray.500">
-            {' '}
-            - {role}
+      <NextSeo title="Partners" />
+      <Stack align="start" spacing={2}>
+        <Flex
+          w={60}
+          h={32}
+          align="center"
+          justify="center"
+          color="white"
+          rounded="xl"
+          bg={useColorModeValue('purple.100', 'purple.700')}
+        >
+          <Image src={image} />
+        </Flex>
+        <Box pt={4}>
+          <Heading size="md">{heading}</Heading>
+          <Text mt={2} fontSize="sm">
+            {description}
           </Text>
-        </Text>
-      </Flex>
-      <Image
-        src={picture}
-        width="400px"
-        height="300px"
-        rounded="2xl"
-        objectFit="cover"
-        alignSelf="center"
-        m={{ base: '0 0 35px 0', md: '0 0 0 50px' }}
-      />
-    </Flex>
+        </Box>
+      </Stack>
+    </Box>
   );
-}
+};
 
 const Partners = () => {
   return (
-    <Flex
-      textAlign="center"
-      pt={10}
-      justifyContent="center"
-      direction="column"
-      width="full"
-      overflow="hidden"
-    >
-      <NextSeo title="partners" />
-      <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin="auto">
-        <chakra.h3
-          fontFamily="Work Sans"
-          fontWeight="bold"
-          fontSize={20}
-          textTransform="uppercase"
-          color="purple.400"
-        >
-          People love us
-        </chakra.h3>
-        <chakra.h1
-          py={5}
-          fontSize={48}
-          fontFamily="Work Sans"
-          fontWeight="bold"
-          color={useColorModeValue('gray.700', 'gray.50')}
-        >
-          Youre in good company
-        </chakra.h1>
-        <chakra.h2
-          margin="auto"
-          width="70%"
-          fontFamily="Inter"
-          fontWeight="medium"
-          color={useColorModeValue('gray.500', 'gray.400')}
-        >
-          See why over{' '}
-          <chakra.strong color={useColorModeValue('gray.700', 'gray.50')}>
-            150,000+
-          </chakra.strong>{' '}
-          influencers use EEZY to manage their social media content!
-        </chakra.h2>
-      </Box>
-      <SimpleGrid
-        columns={{ base: 1, '2xl': 2 }}
-        spacing="8"
-        mt={16}
-        mb={16}
-        mx="auto"
-      >
-        {testimonials.map((cardInfo, index) => (
-          <TestimonialCard {...cardInfo} index={index} />
-        ))}
-      </SimpleGrid>
-    </Flex>
+    <Box p={4} pt={8}>
+      <Stack spacing={4} as={Container} maxW="5xl" textAlign="center">
+        <SlideFade in delay={0.5}>
+          <Heading
+            fontSize={{ base: '2xl', sm: '4xl' }}
+            fontWeight="bold"
+            fontFamily="mono"
+            color={useColorModeValue('purple.400', 'purple.600')}
+          >
+            Partners
+          </Heading>
+          <Text
+            pt={8}
+            color={useColorModeValue('gray.600', 'gray.200')}
+            fontSize={{ base: 'md', sm: 'lg' }}
+          >
+            L&K는 자사 호텔 건축/설계/운영까지 준비과정에서 많은 파트너사와
+            협업을 하였습니다. 이 과정에서 선별된 된 파트너사와는 현재까지도
+            업무를 교류하면 함께 파트너 관계를 유지하고 있습니다. 저희의
+            파트너는 클라이언트에게 드리는 한가지 옵션입니다. 충분히 검토를
+            하시고 함께 소통하여 최적화된 파트너를 찾는 것이 핵심입니다.
+          </Text>
+        </SlideFade>
+      </Stack>
+      <Container maxW="5xl" mt={12}>
+        <SlideFade in delay={1}>
+          <Flex flexWrap="wrap" gridGap={12} justify="center">
+            <Card
+              heading="Lecor"
+              image={useColorModeValue(
+                '/picture/Lecor_black.png',
+                '/picture/Lecor.png'
+              )}
+              description="브랜드 비지니스 전개의 최첨단"
+            />
+            <Card
+              heading="Flot"
+              image={useColorModeValue(
+                '/picture/Flot_black.png',
+                '/picture/Flot.png'
+              )}
+              description="호텔에 최적화된 디자인"
+            />
+          </Flex>
+        </SlideFade>
+      </Container>
+    </Box>
   );
 };
 
