@@ -5,6 +5,7 @@ import {
   SimpleGrid,
   useColorModeValue,
   Text,
+  SlideFade,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
@@ -144,38 +145,40 @@ const Portfolio = () => {
       overflow="hidden"
     >
       <NextSeo title="partners" />
-      <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin="auto">
-        <chakra.h3
-          fontFamily="Work Sans"
-          fontWeight="bold"
-          fontSize={24}
-          textTransform="uppercase"
-          color="purple.400"
-        >
-          L&K의 포트폴리오
-        </chakra.h3>
-        <chakra.h1
-          py={5}
-          fontSize={48}
-          fontFamily="Work Sans"
-          color={useColorModeValue('gray.700', 'gray.50')}
-        >
-          함께하는 호텔
-        </chakra.h1>
-        <chakra.h2
-          margin="auto"
-          width="70%"
-          fontFamily="Inter"
-          fontWeight="medium"
-          color={useColorModeValue('gray.500', 'gray.400')}
-        >
-          아래와 같은{' '}
-          <chakra.strong color={useColorModeValue('gray.700', 'gray.50')}>
-            2개
-          </chakra.strong>{' '}
-          의 호텔들이 저희와 함께하고 있습니다
-        </chakra.h2>
-      </Box>
+      <SlideFade in delay={0.5}>
+        <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin="auto">
+          <chakra.h3
+            fontFamily="Work Sans"
+            fontWeight="bold"
+            fontSize={24}
+            textTransform="uppercase"
+            color="purple.400"
+          >
+            L&K의 포트폴리오
+          </chakra.h3>
+          <chakra.h1
+            py={5}
+            fontSize={48}
+            fontFamily="Work Sans"
+            color={useColorModeValue('gray.700', 'gray.50')}
+          >
+            함께하는 호텔
+          </chakra.h1>
+          <chakra.h2
+            margin="auto"
+            width="70%"
+            fontFamily="Inter"
+            fontWeight="medium"
+            color={useColorModeValue('gray.500', 'gray.400')}
+          >
+            아래와 같은{' '}
+            <chakra.strong color={useColorModeValue('gray.700', 'gray.50')}>
+              2개
+            </chakra.strong>{' '}
+            의 호텔들이 저희와 함께하고 있습니다
+          </chakra.h2>
+        </Box>
+      </SlideFade>
       <SimpleGrid
         columns={{ base: 1, '2xl': 2 }}
         spacing="8"
@@ -184,7 +187,9 @@ const Portfolio = () => {
         mx="auto"
       >
         {testimonials.map((cardInfo, index) => (
-          <TestimonialCard {...cardInfo} index={index} />
+          <SlideFade in delay={index / 2 + 1}>
+            <TestimonialCard {...cardInfo} index={index} />
+          </SlideFade>
         ))}
       </SimpleGrid>
     </Flex>
