@@ -66,14 +66,15 @@ const Footer = () => {
       position="fixed"
       w="100%"
       bottom={0}
+      zIndex={3}
     >
       <Container
         as={Stack}
         maxW="8xl"
-        px={8}
-        py={4}
+        px={4}
+        py={2}
         direction={{ base: 'column', md: 'row' }}
-        spacing={4}
+        spacing={2}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
