@@ -1,5 +1,6 @@
-<div align="center">
 ![sample](https://github.com/zerosial/James_Portfolio/assets/97251710/95c3f83c-06b2-4d48-9db8-056212b28cd5)
+
+<div align="center">
   <p>이 프로젝트는 <a href="https://nextjs.org/" target="_blank">Next.js</a> 프로젝트 기반 <code>create-next-app</code>, 과 <a href="https://chakra-ui.com" target="_blank"><b>Chakra UI</b></a> 그리고 <a href="https://www.typescriptlang.org" target="_blank"><b>TypeScript</b></a> 셋팅입니다.</p>
 
 </div>
