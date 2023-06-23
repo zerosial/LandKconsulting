@@ -9,6 +9,7 @@ import {
   Box,
   Text,
   Flex,
+  useToast,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
@@ -16,6 +17,7 @@ import { RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
 
 interface ContactProps {
   name: string;
+  title: string;
   phone: string;
   email: string;
   location: string;
@@ -28,13 +30,24 @@ interface ClickButtonProps {
 
 const ContactBox = ({
   name,
+  title,
   phone,
   email,
   location,
   kakaolink,
 }: ContactProps) => {
+  const toast = useToast();
   const onClickButtonHandler = ({ text }: ClickButtonProps) => {
     navigator.clipboard.writeText(text);
+    if (!toast.isActive(text)) {
+      toast({
+        id: text,
+        title: `${text}`,
+        description: '가 클립보드에 복사되었습니다',
+        duration: 2000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -50,9 +63,10 @@ const ContactBox = ({
           <WrapItem>
             <Box>
               <Heading>Contact</Heading>
-              <Text mt={{ base: 3, sm: 3, md: 3, lg: 5 }} color="gray.400">
+              <Text mt={{ base: 3, sm: 3, md: 3, lg: 5 }} color="gray.300">
                 {name}
               </Text>
+              <Text color="gray.300">{title}</Text>
               <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                 <VStack pl={0} spacing={3} alignItems="flex-start">
                   <Button

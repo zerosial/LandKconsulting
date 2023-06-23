@@ -26,7 +26,6 @@ import ThemeToggle from './ThemeToggle';
 
 interface NavItem {
   label: string;
-  subLabel?: string;
   children?: Array<NavItem>;
   href?: string;
 }
@@ -41,19 +40,12 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/consulting',
   },
   {
-    label: 'Portfolio & Partners',
-    children: [
-      {
-        label: 'Portfolio',
-        subLabel: 'L&K의 포트폴리오',
-        href: '/portfolio',
-      },
-      {
-        label: 'Partners',
-        subLabel: '같이하는 우리의 파트너들',
-        href: '/partners',
-      },
-    ],
+    label: 'Portfolio',
+    href: '/portfolio',
+  },
+  {
+    label: 'Partners',
+    href: '/partners',
   },
   {
     label: 'Contact Us',
@@ -61,7 +53,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
 ];
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href }: NavItem) => {
   return (
     <Link
       as={NextLink}
@@ -70,18 +62,17 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display="block"
       p={2}
       rounded="md"
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: useColorModeValue('purple.50', 'gray.900') }}
     >
       <Stack direction="row" align="center">
         <Box>
           <Text
             transition="all .3s ease"
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'purple.400' }}
             fontWeight={500}
           >
             {label}
           </Text>
-          <Text fontSize="sm">{subLabel}</Text>
         </Box>
         <Flex
           transition="all .3s ease"
