@@ -11,7 +11,7 @@ import {
   useColorModeValue,
   SlideFade,
   Box,
-  Code,
+  Tag,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
@@ -43,22 +43,12 @@ const About = () => {
             </Box>
             <Text fontSize={18}>
               현재는
-              <Code
-                fontSize={20}
-                fontWeight={700}
-                fontFamily="body"
-                color="purple"
-              >
-                오키드호텔 원주-운영 및 소유
-              </Code>{' '}
-              <Code
-                fontSize={20}
-                fontWeight={900}
-                fontFamily="body"
-                color="purple"
-              >
-                시엘로호텔 시흥-운영 컨설팅
-              </Code>
+              <Tag size="md" variant="solid" colorScheme="purple" mx={1}>
+                오키드호텔 원주 - 운영 및 소유
+              </Tag>
+              <Tag size="md" variant="solid" colorScheme="purple" mx={1}>
+                시엘로호텔 시흥 - 운영 컨설팅
+              </Tag>
               을 진행하고 있습니다. L&K는 1st 프로젝트인 오키드호텔을 설계,
               건축, 준공하는 과정에서 수 많은 컨설팅 업체들을 접하였으며, 이
               과정에서 많은 불 필요한 시간과 지출을 경험 하였습니다. 이를
