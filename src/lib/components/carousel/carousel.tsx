@@ -34,8 +34,8 @@ interface Image {
 
 export default function CaptionCarousel({ images, height }: ImagesProps) {
   const [slider, setSlider] = React.useState<Slider | null>(null);
-  const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '10%', md: '40px' });
+  const top = useBreakpointValue({ base: '50%', md: '50%' });
+  const side = useBreakpointValue({ base: '5%', md: '40px' });
 
   return (
     <>
@@ -82,20 +82,20 @@ export default function CaptionCarousel({ images, height }: ImagesProps) {
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
           >
-            <Container size="container.lg" height={height}>
+            <Container pl={1} size="container.lg" height={height}>
               <Stack
                 spacing={6}
                 w="100vw"
-                maxW="lg"
+                maxW="xl"
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)"
               >
                 <Box
                   backdropFilter="auto"
-                  backdropBrightness="60%"
+                  backdropBrightness="50%"
                   mt="30vh"
-                  maxW="90vw"
+                  maxW="98vw"
                 >
                   <Heading
                     fontFamily="body"
