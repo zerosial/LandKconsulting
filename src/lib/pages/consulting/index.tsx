@@ -19,8 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import type { ReactNode } from 'react';
-import { GiReceiveMoney } from 'react-icons/gi';
-import { GrVolumeControl } from 'react-icons/gr';
+import { GiReceiveMoney, GiAbstract118 } from 'react-icons/gi';
 import { VscSymbolNamespace } from 'react-icons/vsc';
 
 import ConsultingText from '~/lib/components/consulting/ConsultingText';
@@ -108,7 +107,7 @@ const Consulting = () => {
           <StatsCard
             title="Operation Maxi migration"
             stat="운영 효율 극대화"
-            icon={<GrVolumeControl size="3em" />}
+            icon={<GiAbstract118 size="3em" />}
           />
         </SimpleGrid>
         <Box pt={20}>

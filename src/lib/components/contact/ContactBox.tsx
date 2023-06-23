@@ -9,6 +9,7 @@ import {
   Box,
   Text,
   Flex,
+  useToast,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
@@ -33,8 +34,18 @@ const ContactBox = ({
   location,
   kakaolink,
 }: ContactProps) => {
+  const toast = useToast();
   const onClickButtonHandler = ({ text }: ClickButtonProps) => {
     navigator.clipboard.writeText(text);
+    if (!toast.isActive(text)) {
+      toast({
+        id: text,
+        title: `${text}`,
+        description: '가 클립보드에 복사되었습니다',
+        duration: 2000,
+        isClosable: true,
+      });
+    }
   };
 
   return (

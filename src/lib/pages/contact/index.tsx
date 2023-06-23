@@ -14,7 +14,7 @@ const Contact = () => {
             phone="010-9336-9219"
             email="Jason@orchidhotel.co.kr"
             location="L&K 컨설팅 (원주)"
-            kakaolink="http://www.orchidhotel.co.kr/"
+            kakaolink="https://www.linkedin.com/in/%ED%9A%A8%EC%A4%80-%EC%9D%B4-a2127020a/"
           />
         </SlideFade>
         <SlideFade in delay={1}>
@@ -23,7 +23,7 @@ const Contact = () => {
             phone="010-6635-6423"
             email="James@orchidhotel.co.kr"
             location="L&K 컨설팅 (판교)"
-            kakaolink="http://www.hotelcielo.co.kr/"
+            kakaolink="https://www.linkedin.com/in/james-dohyun-baek-44002734/"
           />
         </SlideFade>
       </Flex>
