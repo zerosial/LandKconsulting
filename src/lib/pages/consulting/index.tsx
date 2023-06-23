@@ -19,8 +19,8 @@ import {
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import type { ReactNode } from 'react';
+import { BsFillBuildingFill } from 'react-icons/bs';
 import { GiReceiveMoney, GiAbstract118 } from 'react-icons/gi';
-import { VscSymbolNamespace } from 'react-icons/vsc';
 
 import ConsultingText from '~/lib/components/consulting/ConsultingText';
 
@@ -37,7 +37,7 @@ const features = [
   },
   {
     id: 2,
-    title: '운영 동선 및 방안 구축',
+    title: '운영 컨셉 확정',
   },
   {
     id: 3,
@@ -97,7 +97,7 @@ const Consulting = () => {
           <StatsCard
             title="Space Value Maximization"
             stat="공간 가치 극대화"
-            icon={<VscSymbolNamespace size="3em" />}
+            icon={<BsFillBuildingFill size="3em" />}
           />
           <StatsCard
             title="Cost Reduction"
@@ -105,7 +105,7 @@ const Consulting = () => {
             icon={<GiReceiveMoney size="3em" />}
           />
           <StatsCard
-            title="Operation Maxi migration"
+            title="Operation Maximization"
             stat="운영 효율 극대화"
             icon={<GiAbstract118 size="3em" />}
           />
