@@ -17,6 +17,7 @@ import { RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
 
 interface ContactProps {
   name: string;
+  title: string;
   phone: string;
   email: string;
   location: string;
@@ -29,6 +30,7 @@ interface ClickButtonProps {
 
 const ContactBox = ({
   name,
+  title,
   phone,
   email,
   location,
@@ -61,9 +63,10 @@ const ContactBox = ({
           <WrapItem>
             <Box>
               <Heading>Contact</Heading>
-              <Text mt={{ base: 3, sm: 3, md: 3, lg: 5 }} color="gray.400">
+              <Text mt={{ base: 3, sm: 3, md: 3, lg: 5 }} color="gray.300">
                 {name}
               </Text>
+              <Text color="gray.300">{title}</Text>
               <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                 <VStack pl={0} spacing={3} alignItems="flex-start">
                   <Button
