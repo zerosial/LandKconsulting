@@ -18,17 +18,12 @@ import {
   SlideFade,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
-import type { ReactNode } from 'react';
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { GiReceiveMoney, GiAbstract118 } from 'react-icons/gi';
 
 import ConsultingText from '~/lib/components/consulting/ConsultingText';
 
-interface StatsCardProps {
-  title: string;
-  stat: string;
-  icon: ReactNode;
-}
+import type { StatsCardProps } from './types';
 
 const features = [
   {
