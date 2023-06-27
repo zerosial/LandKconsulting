@@ -48,6 +48,24 @@ const features = [
   },
 ];
 
+const cards = [
+  {
+    title: 'Space Value Maximization',
+    stat: '공간 가치 극대화',
+    icon: <BsFillBuildingFill size="3em" />,
+  },
+  {
+    title: 'Cost Reduction',
+    stat: '원가 절감 극대화',
+    icon: <GiReceiveMoney size="3em" />,
+  },
+  {
+    title: 'Operation Maximization',
+    stat: '운영 효율 극대화',
+    icon: <GiAbstract118 size="3em" />,
+  },
+];
+
 function StatsCard(props: StatsCardProps) {
   const { title, stat, icon } = props;
   return (
@@ -89,21 +107,9 @@ const Consulting = () => {
       </chakra.h1>
       <SlideFade in delay={0.5}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-          <StatsCard
-            title="Space Value Maximization"
-            stat="공간 가치 극대화"
-            icon={<BsFillBuildingFill size="3em" />}
-          />
-          <StatsCard
-            title="Cost Reduction"
-            stat="원가 절감 극대화"
-            icon={<GiReceiveMoney size="3em" />}
-          />
-          <StatsCard
-            title="Operation Maximization"
-            stat="운영 효율 극대화"
-            icon={<GiAbstract118 size="3em" />}
-          />
+          {cards.map((data) => (
+            <StatsCard {...data} />
+          ))}
         </SimpleGrid>
         <Box pt={20}>
           <Stack spacing={4} as={Container} maxW="3xl" textAlign="center">
