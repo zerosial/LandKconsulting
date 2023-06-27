@@ -18,53 +18,15 @@ import {
   SlideFade,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
-import { BsFillBuildingFill } from 'react-icons/bs';
-import { GiReceiveMoney, GiAbstract118 } from 'react-icons/gi';
 
+import {
+  CONSULTING_KOREAN_TABS,
+  CONSULTING_KOREAN_TABLE,
+  CONSULTING_KOREAN_TEXT,
+} from '~/lib/components/Constants';
 import ConsultingText from '~/lib/components/consulting/ConsultingText';
 
 import type { StatsCardProps } from './types';
-
-const features = [
-  {
-    id: 1,
-    title: '시장조사를 통한 타겟 수립',
-  },
-  {
-    id: 2,
-    title: '운영 컨셉 확정',
-  },
-  {
-    id: 3,
-    title: '건축 / 인테리어 / 브랜딩 설계 지원',
-  },
-  {
-    id: 4,
-    title: '공간 내 모든 소모품 및 자산 소싱 지원',
-  },
-  {
-    id: 5,
-    title: '인허가 및 운영시스템 구축 지원',
-  },
-];
-
-const cards = [
-  {
-    title: 'Space Value Maximization',
-    stat: '공간 가치 극대화',
-    icon: <BsFillBuildingFill size="3em" />,
-  },
-  {
-    title: 'Cost Reduction',
-    stat: '원가 절감 극대화',
-    icon: <GiReceiveMoney size="3em" />,
-  },
-  {
-    title: 'Operation Maximization',
-    stat: '운영 효율 극대화',
-    icon: <GiAbstract118 size="3em" />,
-  },
-];
 
 function StatsCard(props: StatsCardProps) {
   const { title, stat, icon } = props;
@@ -103,21 +65,21 @@ const Consulting = () => {
     <Box maxW="7xl" mx="auto" pt={5} px={{ base: 2, sm: 12, md: 17 }}>
       <NextSeo title="Consulting" />
       <chakra.h1 textAlign="center" fontSize="4xl" py={10} fontWeight="bold">
-        핵심가치
+        {CONSULTING_KOREAN_TEXT.title}
       </chakra.h1>
       <SlideFade in delay={0.5}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-          {cards.map((data) => (
+          {CONSULTING_KOREAN_TABS.map((data) => (
             <StatsCard {...data} />
           ))}
         </SimpleGrid>
         <Box pt={20}>
           <Stack spacing={4} as={Container} maxW="3xl" textAlign="center">
-            <Heading fontSize="3xl">L&K의 OS Consulting</Heading>
+            <Heading fontSize="3xl">{CONSULTING_KOREAN_TEXT.heading}</Heading>
           </Stack>
           <Container maxW="6xl" mt={10}>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
-              {features.map((feature) => (
+              {CONSULTING_KOREAN_TABLE.map((feature) => (
                 <HStack key={feature.id} align="top">
                   <Box color="green.400" px={2}>
                     <Icon as={CheckIcon} />
@@ -132,7 +94,7 @@ const Consulting = () => {
         </Box>
       </SlideFade>
       <SlideFade in delay={1}>
-        <ConsultingText />
+        <ConsultingText {...CONSULTING_KOREAN_TEXT} />
       </SlideFade>
     </Box>
   );

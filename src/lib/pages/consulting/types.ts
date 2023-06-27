@@ -5,3 +5,12 @@ export interface StatsCardProps {
   stat: string;
   icon: ReactNode;
 }
+
+export interface ConsultingTextProps {
+  title?: string;
+  heading?: string;
+  firstBold: string;
+  firstBody: string;
+  secondBody: string;
+  thirdBody: string;
+}

@@ -44,14 +44,14 @@ const About = () => {
             </Box>
             <Text fontSize={18}>
               <Tag size="md" variant="solid" colorScheme="purple" mx={1}>
-                {ABOUT_KOREAN_TEXT.first_hotel}
+                {ABOUT_KOREAN_TEXT.firstHotel}
               </Tag>
               <Tag size="md" variant="solid" colorScheme="purple" mx={1}>
-                {ABOUT_KOREAN_TEXT.second_hotel}
+                {ABOUT_KOREAN_TEXT.secondHotel}
               </Tag>
-              {ABOUT_KOREAN_TEXT.first_body}
+              {ABOUT_KOREAN_TEXT.firstBody}
             </Text>
-            <Text fontSize={18}>{ABOUT_KOREAN_TEXT.second_body}</Text>
+            <Text fontSize={18}>{ABOUT_KOREAN_TEXT.secondBody}</Text>
           </Stack>
         </SlideFade>
         <SlideFade in offsetX="10px" delay={1}>
