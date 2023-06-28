@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import type { ConsultingTextProps } from '~/lib/pages/consulting/types';
+import type { ConsultingTextProps } from '~/lib/components/consulting/types';
 
 export const Blob = (props: IconProps) => {
   return (

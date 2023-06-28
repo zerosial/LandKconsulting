@@ -3,16 +3,11 @@ import {
   Box,
   chakra,
   Container,
-  Flex,
   Heading,
   HStack,
   Icon,
   SimpleGrid,
   Stack,
-  Stat,
-  StatLabel,
-  StatNumber,
-  useColorModeValue,
   VStack,
   Text,
   SlideFade,
@@ -24,41 +19,8 @@ import {
   CONSULTING_KOREAN_TABLE,
   CONSULTING_KOREAN_TEXT,
 } from '~/lib/components/Constants';
+import StatsCard from '~/lib/components/consulting/ConsultingStatsCard';
 import ConsultingText from '~/lib/components/consulting/ConsultingText';
-
-import type { StatsCardProps } from './types';
-
-function StatsCard(props: StatsCardProps) {
-  const { title, stat, icon } = props;
-  return (
-    <Stat
-      px={{ base: 2, md: 4 }}
-      py="5"
-      shadow="xl"
-      border="1px solid"
-      borderColor={useColorModeValue('gray.800', 'gray.500')}
-      rounded="lg"
-    >
-      <Flex justifyContent="space-between">
-        <Box pl={{ base: 2, md: 4 }}>
-          <StatLabel fontWeight="medium" color="purple.400" isTruncated>
-            {title}
-          </StatLabel>
-          <StatNumber fontSize="2xl" fontWeight="medium">
-            {stat}
-          </StatNumber>
-        </Box>
-        <Box
-          my="auto"
-          color={useColorModeValue('gray.800', 'gray.200')}
-          alignContent="center"
-        >
-          {icon}
-        </Box>
-      </Flex>
-    </Stat>
-  );
-}
 
 const Consulting = () => {
   return (
