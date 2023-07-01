@@ -12,8 +12,9 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { AiFillLinkedin } from 'react-icons/ai';
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
-import { RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
+import { RiMailFill } from 'react-icons/ri';
 
 interface ContactProps {
   name: string;
@@ -21,7 +22,7 @@ interface ContactProps {
   phone: string;
   email: string;
   location: string;
-  kakaolink: string;
+  linkedinLink: string;
 }
 
 interface ClickButtonProps {
@@ -34,7 +35,7 @@ const ContactBox = ({
   phone,
   email,
   location,
-  kakaolink,
+  linkedinLink,
 }: ContactProps) => {
   const toast = useToast();
   const onClickButtonHandler = ({ text }: ClickButtonProps) => {
@@ -113,14 +114,14 @@ const ContactBox = ({
                 justifyContent="center"
                 align="center"
               >
-                <Link href={kakaolink}>
+                <Link href={linkedinLink}>
                   <IconButton
                     aria-label="github"
                     variant="ghost"
                     size="lg"
                     isRound
                     _hover={{ bg: '#9e30c0ef' }}
-                    icon={<RiKakaoTalkFill size="28px" />}
+                    icon={<AiFillLinkedin size="28px" />}
                   />
                 </Link>
                 <Link href={`mailto:${email}`}>
