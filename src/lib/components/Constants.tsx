@@ -2,6 +2,8 @@
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { GiReceiveMoney, GiAbstract118 } from 'react-icons/gi';
 
+import type { HeaderNavItem } from './header/types';
+
 export const HOME_CAROUSEL_IMAGES = [
   {
     title: '호텔 및 숙박시설 컨설팅 및 위탁 운영사',
@@ -79,5 +81,28 @@ export const CONSULTING_KOREAN_TABS = [
     title: 'Operation Maximization',
     stat: '운영 효율 극대화',
     icon: <GiAbstract118 size="3em" />,
+  },
+];
+
+export const HEADER_NAV_ITEMS: Array<HeaderNavItem> = [
+  {
+    label: 'About L&K',
+    href: '/about',
+  },
+  {
+    label: 'OS Consulting',
+    href: '/consulting',
+  },
+  {
+    label: 'Portfolio',
+    href: '/portfolio',
+  },
+  {
+    label: 'Partners',
+    href: '/partners',
+  },
+  {
+    label: 'Contact Us',
+    href: '/contact',
   },
 ];

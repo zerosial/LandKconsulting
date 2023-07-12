@@ -2,115 +2,20 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {
   Box,
   Flex,
-  Text,
   IconButton,
   Stack,
   Collapse,
   Link,
-  Popover,
-  PopoverTrigger,
   useColorModeValue,
   useDisclosure,
   Image,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import type { HeaderNavItem } from '../components/header/types';
+import { DesktopNav } from '../components/header/DesktopNav';
+import { MobileNav } from '../components/header/MobileNav';
 
 import ThemeToggle from './ThemeToggle';
-
-const NAV_ITEMS: Array<HeaderNavItem> = [
-  {
-    label: 'About L&K',
-    href: '/about',
-  },
-  {
-    label: 'OS Consulting',
-    href: '/consulting',
-  },
-  {
-    label: 'Portfolio',
-    href: '/portfolio',
-  },
-  {
-    label: 'Partners',
-    href: '/partners',
-  },
-  {
-    label: 'Contact Us',
-    href: '/contact',
-  },
-];
-
-const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-
-  return (
-    <Stack direction="row" spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger="hover" placement="bottom-start">
-            <PopoverTrigger>
-              <Link
-                as={NextLink}
-                p={2}
-                href={navItem.href ?? ''}
-                fontSize="md"
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Link>
-            </PopoverTrigger>
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, href }: HeaderNavItem) => {
-  return (
-    <Stack spacing={4}>
-      <Flex
-        py={2}
-        as={NextLink}
-        href={href ?? ''}
-        justify="space-between"
-        align="center"
-        _hover={{
-          textDecoration: 'none',
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
-        >
-          {label}
-        </Text>
-      </Flex>
-    </Stack>
-  );
-};
-
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      p={4}
-      display={{ md: 'none' }}
-    >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
