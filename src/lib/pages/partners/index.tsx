@@ -3,56 +3,13 @@ import {
   Container,
   Flex,
   Heading,
-  Image,
   SlideFade,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { NextSeo } from 'next-seo';
 
-interface CardProps {
-  heading: string;
-  description: string;
-  subDescription: string;
-  image: string;
-}
-
-const Card = ({ heading, description, subDescription, image }: CardProps) => {
-  return (
-    <Box
-      maxW={{ base: 'full', md: '275px' }}
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      p={5}
-    >
-      <NextSeo title="Partners" />
-      <Stack spacing={2}>
-        <Flex
-          w={60}
-          h={32}
-          align="center"
-          justify="center"
-          color="white"
-          rounded="xl"
-          bg={useColorModeValue('purple.100', 'purple.700')}
-        >
-          <Image src={image} />
-        </Flex>
-        <Box pt={4} pl={4}>
-          <Heading size="md">{heading}</Heading>
-          <Text mt={2} fontSize="sm">
-            {description}
-          </Text>
-          <Text mt={2} fontSize="sm" align="center" fontWeight={600}>
-            {subDescription}
-          </Text>
-        </Box>
-      </Stack>
-    </Box>
-  );
-};
+import { Card } from '~/lib/components/partners/Card';
 
 const Partners = () => {
   return (
