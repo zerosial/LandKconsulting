@@ -2,5 +2,6 @@ export interface CardProps {
   heading: string;
   description: string;
   subDescription: string;
-  image: string;
+  imageLight: string;
+  imageDark: string;
 }

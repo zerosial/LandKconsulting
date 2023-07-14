@@ -15,8 +15,10 @@ export const Card = ({
   heading,
   description,
   subDescription,
-  image,
+  imageLight,
+  imageDark,
 }: CardProps) => {
+  const image = useColorModeValue(imageLight, imageDark);
   return (
     <Box
       maxW={{ base: 'full', md: '275px' }}
