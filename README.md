@@ -53,3 +53,9 @@ pnpm dev
 ## E2E 테스트 (로컬 환경)
 
 1.  `pnpm build`명령어를 통해 빌드하고 `pnpm start` 명령어를 통해 시작합니다.
+
+## 도메인 연결
+
+Lnkconsulting.co.kr
+
+진행중
