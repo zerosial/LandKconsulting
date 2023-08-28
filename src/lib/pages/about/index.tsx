@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
-import { ABOUT_KOREAN_TEXT } from '~/lib/components/Constants';
+import { ABOUT_KOREAN_TEXT } from '~/lib/constants';
 
 const About = () => {
   return (

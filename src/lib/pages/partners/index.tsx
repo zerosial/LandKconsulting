@@ -9,8 +9,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { PARTNERS_KOREAN_TEXTS } from '~/lib/components/Constants';
 import { Card } from '~/lib/components/partners/Card';
+import { PARTNERS_KOREAN_TEXTS } from '~/lib/constants';
 
 const Partners = () => {
   return (

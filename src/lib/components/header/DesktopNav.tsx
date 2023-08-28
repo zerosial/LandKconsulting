@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import { HEADER_NAV_ITEMS } from '../Constants';
+import { HEADER_NAV_ITEMS } from '../../constants';
 
 export const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');

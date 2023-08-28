@@ -1,6 +1,6 @@
 import { Stack, useColorModeValue } from '@chakra-ui/react';
 
-import { HEADER_NAV_ITEMS } from '../Constants';
+import { HEADER_NAV_ITEMS } from '../../constants';
 
 import { MobileNavItem } from './MobileNavItem';
 

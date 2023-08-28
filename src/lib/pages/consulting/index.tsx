@@ -14,13 +14,13 @@ import {
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
+import StatsCard from '~/lib/components/consulting/ConsultingStatsCard';
+import ConsultingText from '~/lib/components/consulting/ConsultingText';
 import {
   CONSULTING_KOREAN_TABS,
   CONSULTING_KOREAN_TABLE,
   CONSULTING_KOREAN_TEXT,
-} from '~/lib/components/Constants';
-import StatsCard from '~/lib/components/consulting/ConsultingStatsCard';
-import ConsultingText from '~/lib/components/consulting/ConsultingText';
+} from '~/lib/constants';
 
 const Consulting = () => {
   return (

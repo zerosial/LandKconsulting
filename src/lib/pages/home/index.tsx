@@ -2,7 +2,7 @@ import { Box, SlideFade, Flex } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
 import CaptionCarousel from '~/lib/components/carousel/carousel';
-import { HOME_CAROUSEL_IMAGES } from '~/lib/components/Constants';
+import { HOME_CAROUSEL_IMAGES } from '~/lib/constants';
 
 const Home = () => {
   return (
