@@ -13,6 +13,8 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
+import type { ConsultingTextProps } from '~/lib/components/consulting/types';
+
 export const Blob = (props: IconProps) => {
   return (
     <Icon
@@ -32,7 +34,8 @@ export const Blob = (props: IconProps) => {
   );
 };
 
-const ConsultingText = () => {
+const ConsultingText = (ConsultingTextProps: ConsultingTextProps) => {
+  const { firstBold, firstBody, secondBody, thirdBody } = ConsultingTextProps;
   return (
     <Container maxW="7xl">
       <Stack
@@ -69,21 +72,15 @@ const ConsultingText = () => {
             </Text>
           </Heading>
           <Text color="black.300" fontFamily="body">
-            L&K는 호텔/숙박시설 설계, 건축을 진행하는 과정에서 클라이언트를
-            대리하여
+            {firstBody}
             <Text fontSize={18} as="b">
               {' '}
-              PM(프로젝트 매니징){' '}
+              {firstBold}{' '}
             </Text>
-            역할을 총괄합니다. 이에 동일 기간 내 동시다발적 프로젝트를 진행하지
-            않으며, 한 가지 프로젝트만 맡아서 진행합니다. 컨설팅을 진행함에 있어
-            클라이언트와의 지속적인 소통을 통해 클라이언트가 추구하는
-            호텔/숙박시설을 만들어 낼 수 있도록 합니다.
+            {secondBody}
           </Text>
           <Text color="black.300" fontFamily="body">
-            호텔은 단순 숙박시설이 아닌 문화공간입니다. 방문하는 고객들은 24시간
-            이상 체류하며 공간을 경험하게 됩니다. 이에 L&K는 공간에 대한 가치,
-            원가 절감, 운영 효율 극대화를 3가지 핵심 가치로 여기고 있습니다.
+            {thirdBody}
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} alignItems="center">
             <Link href="/contact">

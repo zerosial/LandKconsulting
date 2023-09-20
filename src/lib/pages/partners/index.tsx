@@ -3,56 +3,14 @@ import {
   Container,
   Flex,
   Heading,
-  Image,
   SlideFade,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { NextSeo } from 'next-seo';
 
-interface CardProps {
-  heading: string;
-  description: string;
-  subDescription: string;
-  image: string;
-}
-
-const Card = ({ heading, description, subDescription, image }: CardProps) => {
-  return (
-    <Box
-      maxW={{ base: 'full', md: '275px' }}
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      p={5}
-    >
-      <NextSeo title="Partners" />
-      <Stack spacing={2}>
-        <Flex
-          w={60}
-          h={32}
-          align="center"
-          justify="center"
-          color="white"
-          rounded="xl"
-          bg={useColorModeValue('purple.100', 'purple.700')}
-        >
-          <Image src={image} />
-        </Flex>
-        <Box pt={4} pl={4}>
-          <Heading size="md">{heading}</Heading>
-          <Text mt={2} fontSize="sm">
-            {description}
-          </Text>
-          <Text mt={2} fontSize="sm" align="center" fontWeight={600}>
-            {subDescription}
-          </Text>
-        </Box>
-      </Stack>
-    </Box>
-  );
-};
+import { PARTNERS_KOREAN_TEXTS } from '~/lib/components/Constants';
+import { Card } from '~/lib/components/partners/Card';
 
 const Partners = () => {
   return (
@@ -73,41 +31,30 @@ const Partners = () => {
             color={useColorModeValue('gray.600', 'gray.200')}
             fontSize={{ base: 'md', sm: 'lg' }}
           >
-            L&K는 자사 호텔 건축/설계/운영까지 준비과정에서 많은 파트너사와
-            협업을 하였습니다. 이 과정에서 선별된 된 파트너사와는 현재까지도
-            업무를 교류하며 함께 파트너 관계를 유지하고 있습니다.
+            {PARTNERS_KOREAN_TEXTS.DESCRIPTION}
           </Text>
           <Text
             pt={8}
             color={useColorModeValue('gray.600', 'gray.200')}
             fontSize={{ base: 'md', sm: 'lg' }}
           >
-            저희의 파트너는 클라이언트에게 드리는 한가지 옵션입니다. 충분히
-            검토를 하시고 함께 소통하여 최적화된 파트너를 찾는 것이 핵심입니다.
+            {PARTNERS_KOREAN_TEXTS.OPTION_DESCRIPTION}
           </Text>
         </SlideFade>
       </Stack>
       <Container maxW="5xl" mt={12}>
         <SlideFade in delay={1}>
           <Flex flexWrap="wrap" gridGap={12} justify="center">
-            <Card
-              heading="Lecor"
-              image={useColorModeValue(
-                '/picture/Lecor_black.png',
-                '/picture/Lecor.png'
-              )}
-              description="브랜드 비지니스 전개의 최첨단"
-              subDescription="Branding Company"
-            />
-            <Card
-              heading="Flot"
-              image={useColorModeValue(
-                '/picture/Flot_black.png',
-                '/picture/Flot.png'
-              )}
-              description="호텔에 최적화된 디자인"
-              subDescription="Design Company"
-            />
+            {PARTNERS_KOREAN_TEXTS.CARDS.map((card) => (
+              <Card
+                key={card.heading}
+                heading={card.heading}
+                description={card.description}
+                subDescription={card.subDescription}
+                imageLight={card.imageBlack}
+                imageDark={card.image}
+              />
+            ))}
           </Flex>
         </SlideFade>
       </Container>
