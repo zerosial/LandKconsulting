@@ -7,7 +7,7 @@
 
 ## 도메인
 
-Lnkconsulting.co.kr
+https://landk.vercel.app/
 
 ## 🎨 프로젝트 요약
 
